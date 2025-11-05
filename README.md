@@ -100,31 +100,16 @@ Follow them sequentially:
 ## 🌍 Integration Diagram (High-Level Data Flow)
 
 ```mermaid
-flowchart LR
-subgraph Data Layer
-W[Weather API]
-T[Traffic Data]
-A[Amazon Delivery Dataset]
-end
-subgraph Processing
-E[ETL (Airflow)]
-M[Model Training + FastAPI]
-end
-subgraph UI
-F[React + Vite Frontend]
-end
-
-W --> E
-T --> E
-A --> E
-E --> M
-M --> F
-F -->|User Requests| M
-M -->|Responses| F
-```
+graph TD
+    A[ETL Pipeline - Airflow] -->|"Stores Clean Data"| B[(Minio)]
+    B --> C[ML Model + FastAPI]
+    C -->|"REST APIs"| D[Frontend (React + Vite)]
+    C -->|"Model Tracking"| E[MLflow]
+    C -->|"Cache Results"| F[(Redis)]
+    D -->|"Trigger Inference / Visualize Results"| C
 
 ---
-
+```
 ## Example Use Case
 
 - A logistics company wants to predict ETA for each delivery.
