@@ -16,17 +16,7 @@
 
 ## System Architecture
 
-```mermaid
-graph TD
-    A[ETL Pipeline - Airflow] -->|Stores Clean Data| B[(Minio)]
-    B --> C[ML Model + FastAPI]
-    C -->|REST APIs| D[ Frontend (React + Vite)]
-    C -->|Model Tracking| E[MLflow]
-    C -->|Cache Results| F[(⚡ Redis)]
-    D -->|Trigger Inference / Visualize Results| C
-```
-
----
+Data Sources → ETL (Airflow) → Clean Data → Model + API (FastAPI) → Predictions → Frontend (React + Vite)
 
 ## ⚙️ Tech Stack Overview
 
@@ -99,17 +89,8 @@ Follow them sequentially:
 
 ## 🌍 Integration Diagram (High-Level Data Flow)
 
-```mermaid
-graph TD
-    A[ETL Pipeline - Airflow] -->|"Stores Clean Data"| B[(Minio)]
-    B --> C[ML Model + FastAPI]
-    C -->|"REST APIs"| D[Frontend (React + Vite)]
-    C -->|"Model Tracking"| E[MLflow]
-    C -->|"Cache Results"| F[(Redis)]
-    D -->|"Trigger Inference / Visualize Results"| C
+Data Sources → ETL (Airflow) → Clean Data → Model + API (FastAPI) → Predictions → Frontend (React + Vite)
 
----
-```
 ## Example Use Case
 
 - A logistics company wants to predict ETA for each delivery.
