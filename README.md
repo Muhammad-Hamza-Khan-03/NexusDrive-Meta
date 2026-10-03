@@ -4,6 +4,8 @@
 
 ---
 
+[Portfolio case study](https://hamza-khan-portfolio.hamzakhan102003.chatgpt.site/projects/nexusdrive/) · [Recorded model metrics](https://github.com/Muhammad-Hamza-Khan-03/NexusDrive/blob/main/model_metadata.json)
+
 ## Repository Ecosystem
 
 | Component | Description | Repository |
@@ -114,7 +116,7 @@ Data Sources → ETL (Airflow) → Clean Data → Model + API (FastAPI) → Pred
 AI & Full-Stack Engineer | MLOps Enthusiast  
 📧 hamzakhan102003@gmail.com  
 
-🌐 [LinkedIn](https://www.linkedin.com/in/muhammad-hamza-khan-03/)
+🌐 [LinkedIn](https://www.linkedin.com/in/muhammadhamzakhan/)
 
 ---
 
